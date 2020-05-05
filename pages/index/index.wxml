@@ -1,0 +1,60 @@
+<!--index.wxml-->
+<view class="container">
+	<view class="customBar" style="height:{{customBarHeight*2.5}}px;background-color: rgba(229, 77, 66,{{barOpacity}});}">
+		<custom-title text="首页" color="#FFFFFF" style="height:{{menuButtonHeight}}px;top:{{titleMarginTop}}px" height="{{menuButtonHeight}}" width="100%" />
+		<search style="top:{{customBarHeight+10}}px" height="{{searchHeight}}" width="90%" placeholder="{{placeholder}}" disabled="{{searchDisabled}}" />
+
+		<view class="navigation" style="top:{{navigationMarginTop}}px">
+			<view class="navigationScrollBox">
+				<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+					<view style="height:35px;" class="cu-item {{index==TabCur?'cur':''}}" wx:for="{{navigationList}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">
+						{{item.text}}
+					</view>
+				</scroll-view>
+			</view>
+			<image src="/static/images/home/list.png"></image>
+		</view>
+
+		<!-- <image class="gif-black" mode="scaleToFill" src="https://image.aquan.run/wave.gif" style="height:100rpx;"></image> -->
+	</view>
+	<scroll-view class="aa" scroll-y style="height:{{scrollHeight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-top="{{scrollTop}}">
+		<image class="swiper-backgroud" src="/static/images/custom-tabbar/swiper-background-2.png" style="height:{{customBarHeight*2.5}}px;"> </image>
+
+		<swiper style="" class="swiper" indicator-dots="true" autoplay="true" circular="true" previous-margin="10px" next-margin="10px">
+			<block class="swiper-block" wx:for="{{swiperItem}}" wx:key="index">
+				<swiper-item>
+					<image class="swiper-item-img" src="{{item.background}}"></image>
+				</swiper-item>
+			</block>
+		</swiper>
+
+		<view class="home-grid">
+			<view class="cu-list grid col-{{gridCol}} {{gridBorder?'':'no-border'}}">
+				<view class="cu-item" wx:for="{{iconList}}" wx:key="index" wx:if="{{index<gridCol*2}}">
+					<!-- <view class="cuIcon-{{item.icon}} text-{{item.color}}"> -->
+					<view class="text-{{item.color}}">
+						<image style="height:40px;width:40px" class="text-{{item.color}}" src="/static/images/home/grid-icon/icon.png"></image>
+						<view class="cu-tag badge" wx:if="{{item.badge!=0}}">
+							<block wx:if="{{item.badge!=1}}">{{item.badge>99?"99+":item.badge}}</block>
+						</view>
+					</view>
+					<text>图标</text>
+				</view>
+			</view>
+		</view>
+		<view class="haha"></view>
+		<view class="goods" style="top:{{navigationMarginTop+3}}px;height:{{customBarHeight*2.5 - navigationMarginTop}}px;">
+			<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+				<view style="height:{{customBarHeight*2.5 - navigationMarginTop}}px" class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{sortLableList}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">
+					{{item.text}}
+				</view>
+			</scroll-view>
+		</view>
+
+		<view class="demo"></view>
+		<view class="demo"></view>
+		<view class="demo"></view>
+	</scroll-view>
+
+	<tabbar bind:tapChange="tabbarChange" />
+</view>

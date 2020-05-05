@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "tabbar": "../../components/custom-tabbar/custom-tabbar",
+    "search": "../../components/search/search",
+    "custom-title":"../../components/custom-title/custom-title",
+    "mp-sticky":"../../components/sticky/index"
+  }
+}

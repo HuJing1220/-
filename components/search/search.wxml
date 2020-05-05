@@ -1,0 +1,7 @@
+<!--components/search/search.wxml-->
+<view class=".container">
+    <view class='searchBox' style="height:{{height}}px;width:{{width}};">
+    <image src='./image/search.png'></image>
+    <input  placeholder='{{placeholder}}' placeholder-class="placeholder" style="height:{{height}}px;width:{{width}};" disabled="{{disabled}}"></input>
+  </view>
+</view>

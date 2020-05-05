@@ -1,0 +1,91 @@
+/**index.wxss**/
+/* 顶部自定义标题栏 */
+.customBar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+custom-title {
+  position: fixed;
+  width: 100%
+}
+search {
+  width: 100%;
+  position: fixed;
+}
+.navigation {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-items: center;
+  width: 100%; 
+}
+.navigationScrollBox {
+  display: flex;
+  flex-direction: row;
+  width: 90%; 
+}
+.navigation scroll-view {
+  background-color: rgba(0, 0, 0, 0.01);
+  color: white;
+}
+.navigation image {
+  width: 50rpx;
+  height: 25px;
+  margin-left: 12.5rpx;
+
+} 
+
+/* 动态gif图片 */
+.gif-black {
+  position: absolute;
+  width: 100%;
+  margin-top: 18px;
+  z-index: 99;
+  mix-blend-mode: screen;
+  height: 100rpx;
+}
+/* 滑动视图 */
+scroll-view {
+  background-color:white
+}
+/* 顶部背景图片 */
+.swiper-backgroud {
+  display: flex;
+  height: 100px;
+  width: 100%;
+}
+.swiper {
+  margin-top: -10px;
+  height: 90px;
+}
+.swiper-block {
+  width: 100%;
+  height: 50px;
+}
+swiper-item {
+  width: 100%;
+}
+/* swiper中的图片 */
+.swiper-item-img {
+  margin-left: 2%;
+  width: 96%;
+  height: 100%;
+}
+
+.home-grid {
+  width: 100%;
+  background-color:red;
+}
+.demo {
+  width: 100%;
+  height: 300px;
+  background-color: white
+}
+
+.goods {
+  background:#F5F5F5;
+}
+

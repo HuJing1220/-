@@ -1,0 +1,4 @@
+<!--components/custom-title/custom-title.wxml-->
+<view class="container" style="height:{{hieght}}px;width:{{width}}">
+  <text style="color:{{color}}">{{text}}</text>
+</view>

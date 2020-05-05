@@ -1,0 +1,17 @@
+<!--components/custom-tabbar/custom-tabbar.wxml-->
+
+<view class="tab-bar" style="background:{{bgcolor}};">
+  <view class="tab-bar-border" wx:if="{{showborder}}" style="background:{{bordercolor}};"></view>
+  <block wx:for="{{list}}" wx:key="index">
+    <view class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}" data-name="{{item.text}}" bindtap="switchTab">
+      <!--ICON图-->
+      <image class="{{item.extrude == true ? 'extrude-image':'tab-bar-item-image'}}" src="{{selected === index ? item.selectedIconPath : item.iconPath}}"></image>
+      <!--红点提示-->
+      <view class="dot" wx:if="{{item.isdot}}"></view>
+      <!--数字提示-->
+      <view class="number" wx:if="{{item.number!=0&&item.number!=undefined}}">{{item.number}}</view>
+      <!--文字-->
+      <view class="{{item.extrude == true ? 'extrude-test':'tab-bar-item-text'}}" style="color:{{selected === index ? selectedColor : color}};margin-top:{{(item.isdot&&item.number==0)?-10:(item.number!=0&&item.number!=undefined?-20:10)}}rpx;">{{item.text}}</view>
+    </view>
+  </block>
+</view>
